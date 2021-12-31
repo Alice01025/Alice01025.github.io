@@ -25,6 +25,10 @@
             font-weight: bold;
             font-size: 30px;
         }
+        span{
+            font-weight: bold;
+            font-size: 10px;
+        }
         .p{
             width: 350px;
             height: 90px;
@@ -86,11 +90,10 @@
             text-decoration: none;
             text-align: center;
         }
-        .ul a:hover{
-            padding: 20px;
-            margin: auto;
+        .ul li:hover{
             background-color:hsl(204, 94%, 27%);
             color: ivory;
+            transition: 1s;
         }
         .introduce{
             width: 450px;
@@ -166,8 +169,10 @@
 <body>
     <div class="wrap">
         <div class="head1" >
-            <div class="menu">
-                <a style="font-size: 20px;" href="Build School"><img style="margin: 3px;" src="assets/asset 0.webp" alt="">Build School</a>
+            <nav class="menu">
+                <img style="width: 3%;height: 12%;" src="assets/asset 0.webp" alt="">
+                <a style="font-size: 20px;" href="Build School">Build School<br><span>developer career builder</span></a>
+                <!-- <a style="font-size: 20px;" href="Build School"><img style="margin: 3px;" src="assets/asset 0.webp" alt="">Build School</a> -->
                 <a href="台北班簡介">台北班簡介</a>
                 <a href="新竹班簡介">新竹班簡介</a>
                 <a href="Micrsoft證照">Micrsoft證照</a>
@@ -175,7 +180,7 @@
                 <a href="Blog">Blog</a>
                 <a href="歷屆老師">歷屆老師</a>
                 <a href="問題洽詢">問題洽詢</a>
-            </div>
+            </nav>
             <img style="margin: 15px;" src="assets/asset 40.jpg" alt=""><br><br>
             <ul class="ul">
                 <li><a href="台北班簡介及報名">台北班簡介及報名(2022/4/29)</a></li>
