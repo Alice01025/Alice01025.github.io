@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+<body>
+    <h1>寶可夢圖鑑列表</h1>
+    <button onclick='fetchPokemon()'>載入寶可夢圖鑑列表</button>
+    <button onclick='fetchPokemon()'>載入寶可夢圖鑑列表fetchPokemon()</button>
+    <button onclick='fetchPokemon_appendChild()'>載入寶可夢圖鑑列表appendChild()</button>
+    <button onclick='Clickplus()'>Click+1</button>
+    <button onclick='Clickminus()'>Click-1</button>
+    <button id='reset' onclick="resetPokemon()">Reset</button>
+
+    <div id='container'></div>
+
+
+
+
+    <script>
+        let container = document.getElementById('container');
+
+        window.onload = appendPokemon();
+
+        //方式1:利用Element.innerHTML設定HTML字串
+        function setPokemon() {
+            let h1 = document.getElementsByTagName('h1')[0];
+            h1.innerText = "Pokemon圖鑑列表";
+
+            let fileName = "001";
+            let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+            let pokemonImg = `<img src='${pathFile}'>`;
+            
+            container.innerHTML = pokemonImg;
+        }
+
+        //方式2:新增DOM元素
+        function appendPokemon() {
+            let img = document.createElement("img");
+            img.setAttribute("src","https://assets.pokemon.com/assets/cms2/img/pokedex/detail/039.png");
+
+            container.appendChild(img);
+
+        }
+
+        //方式1:for迴圈 ＋ Element.innerHTML設定HTML字串
+        function fetchPokemon() {
+            let pokemons = "";
+
+            for(let i = 1; i < 890; i++){
+                let fileName = i.toString().padStart(3,'0');
+                let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+                let pokemonImg = `<img src='${pathFile}'>`;
+                pokemons += pokemonImg;
+            }
+            
+            container.innerHTML = pokemons;
+        }
+
+        //方式2:for迴圈 ＋ 新增DOM元素
+        function fetchPokemon_appendChild() {
+            container.innerHTML = "";
+
+            let fileName, pathFile;
+            for(let i = 1; i < 890; i++){
+                fileName = i.toString().padStart(3,'0');
+                pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
+
+                
+                let img = document.createElement("img");
+                img.setAttribute("src", pathFile);
+                container.appendChild(img);
+            }
+        }
+
+        function resetPokemon() {
+            container.innerHTML = "";
+
+            while (container.firstChild){
+                container.removeChild(container.firstChild);
+            }
+        }
+
+        //加一
+        function Clickplus(){
+
+        }
+
+        //減一
+        function Clickminus(){
+            
+        }
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
