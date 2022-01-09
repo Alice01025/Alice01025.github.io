@@ -65,6 +65,52 @@
             background-color: #1fde82;
             color: ivory;
         }
+        @media screen and (max-width:767px){
+            .trademark-pic{
+                width: 400px;
+                height: 100%;
+            }
+            .menu {
+                display: flex;
+                flex-direction: column;
+                /* position: fixed; */
+                width: 300px;
+                height: calc(100% - 60px);
+                background-color: #fa0;
+                top: 60px;
+                right: -100%;
+                opacity: 0;
+                transition: 1s;
+            }
+            .header #menu-control:checked ~ .menu{
+                opacity: 1;
+                right: 0;
+            }
+            .menu a{
+                color: #5d6678;
+            }
+            .hb{
+                --bar-color: ivory;
+                width: 40px;
+                height: 40px;
+                background-color: #1fde82;
+                display: flex;
+            }
+            .hb::after{
+                content: '';
+                /* display: block; */
+                width: 80%;
+                height: 4px;
+                background-color: var(--bar-color);
+                margin: auto;
+                box-shadow: 0px 10px 0px var(--bar-color),
+                            0px -10px 0px var(--bar-color);
+            }
+            #menu-control{
+                position: absolute;
+                top: -20px;
+            }
+        }
         /* section slogan */
         .slogan{
             padding-top: 150px;
@@ -318,28 +364,32 @@
     </style>
 </head>
 <body>
+    <input type="checkbox" id="menu-control">
     <header class="container">
             <div class="header row">
                 <!-- 要三個列，所以全部12塊，每個列要有四塊 -->
-                <div class="trademark-pic col-3">
-                    <img src="/Maikon assets/assets1.png" alt="">
+                <div class="trademark-pic col-12 col-md-3 col-lg-3 col-xl-3">
+                    <img src="/HTML/Maikon assets/assets1.png" alt="">
                 </div>
-                <div class="list col-6">
-                    <a href="#">Home</a>
-                    <a href="#">About</a>
-                    <a href="#">Services</a>
-                    <a href="#">Team</a>
-                    <a href="#">Case Studio</a>
-                    <a href="#">Contacts</a>
-                </div>
-                <div class="subscribebtn col-3">
-                    <a href="#">SUBSCRIBE</a>
+                <label class="hb" for="menu-control"></label>
+                <div class="menu row">
+                    <div class="list col-10">
+                        <a href="#">Home</a>
+                        <a href="#">About</a>
+                        <a href="#">Services</a>
+                        <a href="#">Team</a>
+                        <a href="#">Case Studio</a>
+                        <a href="#">Contacts</a>
+                    </div>
+                    <div class="subscribebtn col-2">
+                        <a href="#">SUBSCRIBE</a>
+                    </div>
                 </div>
             </div>
     </header>
     <section class="container">
         <div class="slogan row">
-            <div class="slgsuccess-txt col-6">
+            <div class="slgsuccess-txt col-12 col-md-12 col-lg-6 col-xl-6">
                 <h2>Our creativity is your success</h2><br>
                 <p>We break all boundaries if they happen on our way of project's development!</p>
                 <div class="btn">
@@ -347,13 +397,13 @@
                     <a class="videobtn" href="#">WATCH VIDEO</a>
                 </div>
             </div>
-            <div class="slgsuccess-pic col-6">
-                <img src="/Maikon assets/assets2.svg" alt="">
+            <div class="slgsuccess-pic col-12 col-md-12 col-lg-6 col-xl-6">
+                <img src="/HTML/Maikon assets/assets2.svg" alt="">
             </div>
-            <div class="slgpassion-pic col-6">
-                <img src="/Maikon assets/assets3.png" alt="">
+            <div class="slgpassion-pic col-12 col-md-12 col-lg-6 col-xl-6">
+                <img src="/HTML/Maikon assets/assets3.png" alt="">
             </div>
-            <div class="slgpassion-txt col-6">
+            <div class="slgpassion-txt col-12 col-md-12 col-lg-6 col-xl-6">
                 <h2>Creative challenges are our passion</h2><br>
                 <p>Our team of designers and developers work closely together to build a creative and positive working environment. Functionality is as important to us as aesthetics.</p>
                 <div class="btn">
@@ -366,39 +416,39 @@
     <section class="container">
         <div class="services row">
             <div class="col-12 services-txt"> <h2>We provide a wide range of creative services</h2></div>
-            <div class="col-4 introduce">
-                <img src="/Maikon assets/icon-1.svg" alt="">
+            <div class="col-12 col-md-12 col-lg-4 col-xl-4 introduce">
+                <img src="/HTML/Maikon assets/icon-1.svg" alt="">
                 <h3>Web Design & Brending</h3>
                 <p>A great brand combines design and conveys company's value messaging to evoke emotion and drive strategy.</p>
                 <a href="#">READ MORE ➞</a>
             </div>
-            <div class="col-4 introduce">
-                <img src="/Maikon assets/icon-2.svg" alt="">
+            <div class="col-12 col-md-12 col-lg-4 col-xl-4 introduce">
+                <img src="/HTML/Maikon assets/icon-2.svg" alt="">
                 <h3>Graphic Design</h3>
                 <p>Rich experience plus unlimited imagination create our successful service discovered by clients.</p>
                 <a href="#">READ MORE ➞</a>
             </div>
-            <div class="col-4 introduce">
-                <img src="/Maikon assets/icon-3.svg" alt="">
+            <div class="col-12 col-md-12 col-lg-4 col-xl-4 introduce">
+                <img src="/HTML/Maikon assets/icon-3.svg" alt="">
                 <h3>Video Production</h3>
                 <p>Creating and handling professional video is our strong point. It plays major role in your digital business strategy.
                 </p>
                 <a href="#">READ MORE ➞</a>
             </div>
-            <div class="col-4 introduce">
-                <img src="/Maikon assets/icon-4.svg" alt="">
+            <div class="col-12 col-md-12 col-lg-4 col-xl-4 introduce">
+                <img src="/HTML/Maikon assets/icon-4.svg" alt="">
                 <h3>SEO</h3>
                 <p>We provide everything your site needs to perform at it's highest capabilities on the major search engines.</p>
                 <a href="#">READ MORE ➞</a>
             </div>
-            <div class="col-4 introduce">
-                <img src="/Maikon assets/icon-5.svg" alt="">
+            <div class="col-12 col-md-12 col-lg-4 col-xl-4 introduce">
+                <img src="/HTML/Maikon assets/icon-5.svg" alt="">
                 <h3>Digital Marketing</h3>
                 <p>We do collateral design, interactive design, hoarding, signage, presentation centres, and more.</p>
                 <a href="#">READ MORE ➞</a>
             </div>
-            <div class="col-4 introduce">
-                <img src="/Maikon assets/icon-6.svg" alt="">
+            <div class="col-12 col-md-12 col-lg-4 col-xl-4 introduce">
+                <img src="/HTML/Maikon assets/icon-6.svg" alt="">
                 <h3>Infographics</h3>
                 <p>Turn your data into captivating artwork that will keep your audience engaged. Our team can help you with it.</p>
                 <a href="#">READ MORE ➞</a>
@@ -407,7 +457,7 @@
     </section>
     <section class="container">
         <div class="contact row">
-            <div class="contact-txt col-6">
+            <div class="contact-txt col-12 col-md-12 col-lg-6 col-xl-6">
                 <h3>If you have any questions, please contact us</h3>
                 <p>Our professional support team try to do their best to provide you with high-quality consultations concerning any question about our services.</p>
                 <div class="btn">
@@ -415,21 +465,21 @@
                     <a class="subscribebtn" href="#">SUBSCRIBE</a>
                 </div>
             </div>
-            <div class="contact-pic col-6">
-                <img src="/Maikon assets/assets4.svg" alt="">
+            <div class="contact-pic col-12 col-md-12 col-lg-6 col-xl-6">
+                <img src="/HTML/Maikon assets/assets4.svg" alt="">
             </div>
         </div>
     </section>
     <section class="why">
         <div class="container">
             <div class="row">
-                <div class="block col-6">
-                    <div class="introduce col-5"><P>1880+<br><span>Completed projects to the end by our specialists.</span></P></div>
-                    <div class="introduce col-5"><P>56<br><span>A large team of the best specialists.</span></P></div>
-                    <div class="introduce col-5"><P>2000+<br><span>Customers who were satisfied with our work.</span></P></div>
-                    <div class="introduce col-5"><P>100%<br><span>Our values are good organization and result orientation.</span></P></div>
+                <div class="block col-11 col-md-6 col-lg-6 col-xl-6">
+                    <div class="introduce col-12"><P>1880+<br><span>Completed projects to the end by our specialists.</span></P></div>
+                    <div class="introduce col-12"><P>56<br><span>A large team of the best specialists.</span></P></div>
+                    <div class="introduce col-12"><P>2000+<br><span>Customers who were satisfied with our work.</span></P></div>
+                    <div class="introduce col-12"><P>100%<br><span>Our values are good organization and result orientation.</span></P></div>
                 </div>
-                <div class="txt col-6">
+                <div class="txt col-11 col-md-6 col-lg-6 col-xl-6">
                     <h2>Why choose our studio for your projects?</h2>
                     <p> We are a command of professional and enthusiastic people, who like what they do and are always in the process of growing and improving their skills.</p>
                     <a class="orderbtn" href="#">ORDER SERVICE</a>
