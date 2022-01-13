@@ -58,6 +58,7 @@
         //Function宣告
         function display(count) {
             let pokemon = "";
+            let img;
             for (let i = 1; i <= count; i++) {
                 let fileName = i.toString().padStart(3, '0');
                 let pathFile = `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`;
@@ -66,6 +67,20 @@
             }
             pokemonArea.innerHTML = pokemon;
         }
+        
+        // function display(count) {
+        //     container.innerHTML = "";
+
+        //     let fileName;
+        //     for (let i = 1; i <= count; i++){
+        //         fileName = i.toString().padStart(3,'0');
+        //         let img = document.createElement("img");
+        //         img.setAttribute("src",`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`);
+
+        //         img.addEventListener("click", removeImg);
+        //         container.appendChild(img);
+        //     }
+        // }
 
         function showall() {
             pokemonCount = 890;
@@ -85,6 +100,9 @@
         function minus() {
             pokemonCount -= 1
             display(pokemonCount);
+        }
+        function removeImg(event){
+            container.removeChild(event.target)
         }
     </script>
 
