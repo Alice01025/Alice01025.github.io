@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>iPad</title>
+    <style>
+        
+        .header{
+            width: 100%;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: SF Pro Display,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+            position: fixed;
+            top: 0;
+            border-bottom: 1px solid gray;
+            flex-grow: 1;
+            background-color: #fff;
+        }
+        .header a{
+            padding-left: 300px;
+            font-size: 21px;
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        #price{
+            padding-top: 16px;
+            font-size: 17px;
+            letter-spacing: -.022em;
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+        .main{
+            margin-top: 100px; 
+            font-family: SF Pro Display,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+        }
+        .menu{
+            flex-wrap: wrap;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+        }
+        .menu h1{
+            font-size: 40px;
+            font-weight: 600;
+            text-align: left;
+        }
+        .menu .title{
+            text-align: left;
+            font-size: 17px;
+            font-weight: 600;
+        }
+        .menu img{
+            width: 17%;
+        }
+        button{
+            margin: 10px;
+            margin-top: 0;
+            padding: 14px 14px 14px 14px;
+            border-width: 2px;
+            border-radius: 12px;
+            text-align: center;
+            background-color: #fff;
+            color: #1d1d1f;
+            font-weight: 600;
+        }
+        button:hover{
+            opacity: .7;
+            border: 2px solid blue;
+        }
+        button p{
+            font-size: 12px;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+        .store button{
+            font-size: 29px;
+        }
+        .connect button{
+            font-size: 17px;
+        }
+
+    </style>
+    
+</head>
+<body> 
+    <header class="row">
+        <div class="header col-12">
+            <div class="title col-9">
+                <a href="#">iPad Air</a>
+            </div>
+            <div id="price" class="col-3">
+                <p>NT$18,900起</p>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+            <section class="row main">
+                <div id="picture" class="col-6">
+                    <img src="/JavaScript/Apple/assets1.jpg" alt="">
+                    <img src="/JavaScript/Apple/assets7.jpg" alt="">
+                </div>
+                <div class="menu col-6">
+                    <h1 class="col-12">購買iPad Air</h1>
+                    <div class="visual col-12">
+                        <p class="title col-12">外觀</p>
+                        <button class="col-5" onclick='gray()'><img src="/JavaScript/Apple/assets8.png" alt=""><p>太空灰色</p></button>
+                        <button class="col-5" onclick='silver()'><img src="/JavaScript/Apple/assets9.png" alt=""><p>銀色</p></button>
+                        <button class="col-5" onclick='green()'><img src="/JavaScript/Apple/assets10.jpg" alt=""><p>綠色</p></button>
+                        <button class="col-5" onclick='pink()'><img src="/JavaScript/Apple/assets11.jpg" alt=""><p>玫瑰金色</p></button>
+                        <button class="col-5" onclick='blue()'><img src="/JavaScript/Apple/assets12.png" alt=""><p>天藍色</p></button>
+                    </div>
+                    <div class="store col-12">
+                        <p class="title col-12">儲存裝置</p>
+                        <button class="col-5"><span>64<small>GB<sup>1</sup></small></span><br><p>NT$18,900起</p></button>
+                        <button class="col-5" onclick='big()'><span>256<small>GB<sup>1</sup></small></span><br><p>NT$23,900起</p></button>
+                    </div>
+                    <div class="connect col-12">
+                        <p class="title col-12">連線能力</p>
+                        <button class="col-5" onclick='wifi()'>Wi-Fi<br><p>NT$18,900起</p></button>
+                        <button class="col-5" onclick='Other()'>Wi-Fi+行動網路<br><p>NT$23,200起</p></button>
+                    </div>
+                </div>
+            </section>
+    </div>
+    
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<script>
+    let price = document.getElementById('price');
+
+    function gray(){
+        const img = document.querySelector('img')
+        img.setAttribute('src', '/JavaScript/Apple/assets2.jpg')
+        console.log(img.getAttributeNode('alt').value)
+    }
+    function silver(){
+        const img = document.querySelector('img')
+        img.setAttribute('src', '/JavaScript/Apple/assets3.png')
+        console.log(img.getAttributeNode('alt').value)
+    }
+    function green(){
+        const img = document.querySelector('img')
+        img.setAttribute('src', '/JavaScript/Apple/assets4.png')
+        console.log(img.getAttributeNode('alt').value)
+    }
+    function pink(){
+        const img = document.querySelector('img')
+        img.setAttribute('src', '/JavaScript/Apple/assets5.png')
+        console.log(img.getAttributeNode('alt').value)
+    }
+    function blue(){
+        const img = document.querySelector('img')
+        img.setAttribute('src', '/JavaScript/Apple/assets6.png')
+        console.log(img.getAttributeNode('alt').value)
+    }
+    function wifi(){
+        document.getElementById("price").innerHTML='NT$18,900';
+    }
+</script>
+</body>
+</html>

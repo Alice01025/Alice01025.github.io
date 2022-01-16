@@ -9,25 +9,28 @@
     <title>Pokemon</title>
     <style>
         .pokemonbutton{
-            width: 100%;
             position: fixed;
             top: 0;
             background-color: #fff;
         }
+        #container{
+            margin-top: 100px;
+        }
     </style>
 </head>
 <body>
+    <!-- d-flex justify-content-center align-items-center mt-3 -->
     <div class="pokemonbutton">
         <h1>寶可夢圖鑑列表</h1>
-        <button onclick='fetchPokemon_appendChild()'>載入寶可夢圖鑑列表</button>
-        <button id='onclickPokemon'>載入寶可夢圖鑑列表onclickPokemon</button>
-        <button id='addEventListener'>載入寶可夢圖鑑列表addEventListener</button>
-        <button onclick='Clickplus()'>Click+1</button>
-        <button onclick='Clickminus()'>Click-1</button>
-        <button id='reset' onclick="resetPokemon()">Reset</button>
-        <button id="timer">Timer</button>
-        <button id="stop">Stop Timer</button>
-    </div><br><br><br>
+        <button class="btn btn-outline-warning" onclick='fetchPokemon_appendChild()'>載入寶可夢圖鑑列表</button>
+        <button class="btn btn-outline-warning" id='onclickPokemon'>載入寶可夢圖鑑列表onclickPokemon</button>
+        <button class="btn btn-outline-warning" id='addEventListener'>載入寶可夢圖鑑列表addEventListener</button>
+        <button class="btn btn-outline-success" onclick='Clickplus()'>Click+1</button>
+        <button class="btn btn-outline-success" onclick='Clickminus()'>Click-1</button>
+        <button class="btn btn-outline-danger" id='reset' onclick="resetPokemon()">Reset</button>
+        <button class="btn btn-outline-info" id="timer">Timer</button>
+        <button class="btn btn-outline-info" id="stop">Stop Timer</button>
+    </div>
 
     <div id='container'></div>
 
@@ -128,7 +131,7 @@
                 let img = document.createElement("img");
                 img.setAttribute("src", `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${fileName}.png`);
                 container.appendChild(img);
-                index++
+                index++;
                 break;
             }
         }
@@ -165,7 +168,7 @@
             img.addEventListener("click", removeImg);
 
             container.appendChild(img);
-            index++
+            index++;
         }
     </script>
 
