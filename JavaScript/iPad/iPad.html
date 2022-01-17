@@ -103,18 +103,18 @@
     <div class="container">
             <section class="row main">
                 <div id="picture" class="col-6">
-                    <img src="/JavaScript/Apple/assets1.jpg" alt="">
-                    <img src="/JavaScript/Apple/assets7.jpg" alt="">
+                    <img id="mainpic" src="/JavaScript/iPad/iPadassets/assets1.jpg" alt="">
+                    <img src="/JavaScript/iPad/assets7.jpg" alt="">
                 </div>
                 <div class="menu col-6">
                     <h1 class="col-12">購買iPad Air</h1>
                     <div class="visual col-12">
                         <p class="title col-12">外觀</p>
-                        <button class="col-5" onclick='gray()'><img src="/JavaScript/Apple/assets8.png" alt=""><p>太空灰色</p></button>
-                        <button class="col-5" onclick='silver()'><img src="/JavaScript/Apple/assets9.png" alt=""><p>銀色</p></button>
-                        <button class="col-5" onclick='green()'><img src="/JavaScript/Apple/assets10.jpg" alt=""><p>綠色</p></button>
-                        <button class="col-5" onclick='pink()'><img src="/JavaScript/Apple/assets11.jpg" alt=""><p>玫瑰金色</p></button>
-                        <button class="col-5" onclick='blue()'><img src="/JavaScript/Apple/assets12.png" alt=""><p>天藍色</p></button>
+                        <button class="col-5" onclick='gray()'><img src="/JavaScript/iPad/iPadassets/assets8.png" alt=""><p>太空灰色</p></button>
+                        <button class="col-5" onclick='silver()'><img src="/JavaScript/iPad/iPadassets/assets9.png" alt=""><p>銀色</p></button>
+                        <button class="col-5" onclick='green()'><img src="/JavaScript/iPad/iPadassets/assets10.jpg" alt=""><p>綠色</p></button>
+                        <button class="col-5" onclick='rose()'><img src="/JavaScript/iPad/iPadassets/assets11.jpg" alt=""><p>玫瑰金色</p></button>
+                        <button class="col-5" onclick='blue()'><img src="/JavaScript/iPad/iPadassets/assets12.png" alt=""><p>天藍色</p></button>
                     </div>
                     <div class="store col-12">
                         <p class="title col-12">儲存裝置</p>
@@ -124,7 +124,7 @@
                     <div class="connect col-12">
                         <p class="title col-12">連線能力</p>
                         <button class="col-5" onclick='wifi()'>Wi-Fi<br><p>NT$18,900起</p></button>
-                        <button class="col-5" onclick='Other()'>Wi-Fi+行動網路<br><p>NT$23,200起</p></button>
+                        <button class="col-5" onclick='Cellular()'>Wi-Fi+行動網路<br><p>NT$23,200起</p></button>
                     </div>
                 </div>
             </section>
@@ -139,31 +139,34 @@
 <script>
     let price = document.getElementById('price');
 
-    function gray(){
-        const img = document.querySelector('img')
-        img.setAttribute('src', '/JavaScript/Apple/assets2.jpg')
-        console.log(img.getAttributeNode('alt').value)
+    // #region change_img
+    function change_img(count){
+        document.getElementById("mainpic").src=`/JavaScript/iPad/iPadassets/assets${count}.png`;
     }
+
+    function gray() {
+        count = 2;
+        change_img(count);
+    }
+
     function silver(){
-        const img = document.querySelector('img')
-        img.setAttribute('src', '/JavaScript/Apple/assets3.png')
-        console.log(img.getAttributeNode('alt').value)
+        count = 3;
+        change_img(count);
     }
     function green(){
-        const img = document.querySelector('img')
-        img.setAttribute('src', '/JavaScript/Apple/assets4.png')
-        console.log(img.getAttributeNode('alt').value)
+        count = 4;
+        change_img(count);
     }
-    function pink(){
-        const img = document.querySelector('img')
-        img.setAttribute('src', '/JavaScript/Apple/assets5.png')
-        console.log(img.getAttributeNode('alt').value)
+    function rose(){
+        count = 5;
+        change_img(count);
     }
     function blue(){
-        const img = document.querySelector('img')
-        img.setAttribute('src', '/JavaScript/Apple/assets6.png')
-        console.log(img.getAttributeNode('alt').value)
+        count = 6;
+        change_img(count);
     }
+    //#endregion change_img
+
     function wifi(){
         document.getElementById("price").innerHTML='NT$18,900';
     }
