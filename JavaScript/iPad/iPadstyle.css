@@ -18,13 +18,14 @@
     text-decoration: none;
     font-weight: 600;
 }
-#price{
+#headerprice{
     padding-top: 16px;
     font-size: 17px;
     letter-spacing: -.022em;
     font-weight: 600;
     color: #1d1d1f;
 }
+
 .main{
     margin-top: 100px; 
     font-family: SF Pro Display,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
@@ -58,19 +59,39 @@ button{
     background-color: #fff;
     color: #1d1d1f;
     font-weight: 600;
+    user-select: none;
 }
 button:hover{
     opacity: .7;
     border: 2px solid blue;
+}
+button:focus{
+    border-color: #0a58ca;
+    box-shadow: 0 0 0 0.25rem rgba(49, 132, 253, 0.5);
 }
 button p{
     font-size: 12px;
     margin-top: 10px;
     margin-bottom: 0;
 }
-.store button{
+.storage button{
     font-size: 29px;
 }
-.connect button{
+.network button{
     font-size: 17px;
+}
+
+.total{
+    width: 86%;
+    height: 150px;
+    padding: 25px;
+    margin-left: 15px;
+    background-color: #efefef;
+}
+#totalprice{
+    color: #1d1d1f;
+    font-size: 32px;
+    line-height: 1.125;
+    font-weight: 600;
+    letter-spacing: .004em;
 }
