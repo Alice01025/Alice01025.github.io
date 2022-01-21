@@ -1,14 +1,14 @@
 html{
     font-family: "Roboto", Sans-serif;
 }
-
 header a,
 section a{
     text-decoration: none;
 }
  /* header */
 .header{
-    width: 1200px;
+    margin: auto;
+    width: 100%;
     height: 100px;
     position: fixed;
     margin-top: 0;
@@ -21,7 +21,11 @@ section a{
     margin-top: -150px;
 }
 .trademark-pic{
-    padding-top: 25px;
+    display: flex;
+    justify-content: right;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    padding-right: 135px;
 }
 .header .list{
     display: flex;
@@ -64,7 +68,6 @@ section a{
     .menu {
         display: flex;
         flex-direction: column;
-        /* position: fixed; */
         width: 300px;
         height: calc(100% - 60px);
         background-color: #fa0;
@@ -89,7 +92,6 @@ section a{
     }
     .hb::after{
         content: '';
-        /* display: block; */
         width: 80%;
         height: 4px;
         background-color: var(--bar-color);
@@ -181,6 +183,18 @@ section a{
     padding: 15px 15px 14px 14px;
     color: black;
 }
+@media screen and (max-width:767px){
+    .slogan img{
+        width: 100%;
+    }
+    .slogan h2{
+        font-size: 30px;
+    }
+    .slgpassion-txt{
+        padding: 20px;
+    }
+
+}
 /* section services */
 .services-txt{
     display: block;
@@ -219,6 +233,12 @@ section a{
 }
 .services a:hover{
     color: #1fde82;
+}
+@media screen and (max-width:767px){
+    .services h2{
+        font-size: 30px;
+        line-height: 1.31em;
+    }
 }
 /* section contact */
 .contact{
@@ -274,6 +294,19 @@ section a{
 }
 .contact-pic{
     padding-left: 100px;
+}
+@media screen and (max-width:767px){
+    .contact-txt h3{
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .contact-txt p{
+        letter-spacing: 0px;
+    }
+    .contact-pic{
+        padding-left: 15px;
+        width: 100%;
+    }
 }
 /* section why */
 .why{
@@ -343,6 +376,12 @@ section a{
     background-color: #1fde82;
     color: ivory;
 }
+@media screen and (max-width:767px){
+    .why .txt{
+        margin: auto;
+        margin-bottom: 30px;
+    }
+}
 /* section step */
 .step h3{
     font-size: 22px;
@@ -392,6 +431,21 @@ section a{
     height: 200px;
     margin: 60px;
 }
+@media screen and (max-width:767px){
+    .step1txt,
+    .step3txt,
+    .step5txt{
+        order: 1;
+    }
+    .step1 .stepimg,
+    .step3 .stepimg,
+    .step5 .stepimg{
+        order: 2;
+    }
+    .stepimg{
+        width: 90%;
+    }
+}
 /* section projects */
 .projects .title h2{
     font-size: 42px;
@@ -421,6 +475,22 @@ section a{
 .projects .content{
     margin-bottom: 60px;
 }
+@media screen and (max-width:767px){
+    .projects{
+        background-color: #f9fbff;
+    }
+    .projects .title h2{
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .projects img{
+        width: 100%;
+    }
+    .projects .btn{
+        justify-content: left;
+        margin-bottom: 20px;
+    }
+}
 /* section consultation */
 .consultation h2{
     font-size: 42px;
@@ -445,6 +515,7 @@ section a{
 .consultation .greenbtn:hover{
     background-color: #3b3d42;
 }
+
 /* section subscribe */
 .subscribe{
     padding: 100px 100px 100px 100px;
@@ -479,4 +550,82 @@ section a{
 }
 .subscribe .greenbtn:hover{
     background-color: #3b3d42;
+}
+@media screen and (max-width:767px){
+    .subscribe{
+        background-color: #f9fbff;
+        padding: 5px;
+    }
+    .subscribe .search{
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+}
+/* section footer */
+footer img{
+    margin-bottom: 20px;
+}
+footer .information a:hover{
+    color: #5d6678;
+}
+footer .information span{
+    color: #1fde82;
+    font-weight: bold;
+}
+footer h2{
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 1.32em;
+    letter-spacing: 0.44px;
+    margin-bottom: 40px;
+}
+footer a{
+    text-decoration: none;
+    text-align: left;
+    color: #5d6678;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 30px;
+    letter-spacing: 0.28px;
+    text-transform: uppercase;
+    transition: 1s;
+    margin-bottom: 20px;
+}
+footer a:hover{
+    color: #1fde82;
+}
+footer .icongroup{
+    display: flex;
+}
+footer .icon{
+    margin-right: 25px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #000;
+    border-radius: 60%;
+}
+footer .icon a{
+    margin-left: 7px;
+}
+footer .Networks h2{
+    margin-bottom: 0px;
+}
+footer p{
+    text-align: left;
+    color: #5d6678;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.79em;
+    letter-spacing: 0.28px;
+}
+@media screen and (max-width:767px){
+    footer h2{
+        font-size: 30px;
+        margin-top: 40px;
+    }
+    footer .icongroup{
+        margin-top: 20px;
+    }
 }

@@ -1,35 +1,11 @@
 import {$gg} from "../modules/helpers.js";
 
-let Color, headerPrice, totalPrice, iPadData, storageValue, networkValue;
-
 const url = "https://raw.githubusercontent.com/Alice01025/Alice01025.github.io/main/JavaScript/iPad/ipad_array.json"
-let xhr = new XMLHttpRequest();
 
 window.onload = function(){
     requestJSON(url);
     SetElement();
-}
-
-function SetElement(){
-    //color btn
-    Color = document.querySelector("#mainpic");
-    $gg("#gray").addEventListener("click", () => { setColorBtn(0) });
-    $gg("#silver").addEventListener("click", () => { setColorBtn(1) });
-    $gg("#green").addEventListener("click", () => { setColorBtn(2) });
-    $gg("#rose").addEventListener("click", () => { setColorBtn(3) });
-    $gg("#blue").addEventListener("click", () => { setColorBtn(4) });
-
-    //storage btn
-    $gg("#small").addEventListener("click", () => { setStorageBtn(true) });
-    $gg("#big").addEventListener("click", () =>{ setStorageBtn(false) });
-
-    //network btn
-    $gg("#Wi-Fi").addEventListener("click", () => { setNetworkBtn(true) });
-    $gg("#Cellular").addEventListener("click", () => { setNetworkBtn(false) });
-
-    //price
-    headerPrice = $gg("#headerprice");
-    totalPrice = document.querySelector("#totalprice");
+    // Setstyle();
 }
 
 function requestJSON(){
@@ -40,35 +16,68 @@ function requestJSON(){
     xhr.send();
 }
 
-function setColorBtn(i){
-    Color.setAttribute("src", `${iPadData[i]["picture"]}`);
+function SetElement(){
+    //color btn
+    Color = document.querySelector("#mainpic");
+    $gg("#gray").addEventListener("click", () => { setColorBtn("太空灰色") });
+    $gg("#silver").addEventListener("click", () => { setColorBtn("銀色") });
+    $gg("#green").addEventListener("click", () => { setColorBtn("綠色") });
+    $gg("#rose").addEventListener("click", () => { setColorBtn("玫瑰金色") });
+    $gg("#blue").addEventListener("click", () => { setColorBtn("天藍色") });
+
+    //storage btn
+    $gg("#small").addEventListener("click", () => { setStorageBtn(true) });
+    $gg("#big").addEventListener("click", () =>{ setStorageBtn(false) });
+
+    //network btn
+    $gg("#Wi-Fi").addEventListener("click", () => { setNetworkBtn("Wi-Fi") });
+    $gg("#Cellular").addEventListener("click", () => { setNetworkBtn("Wi-Fi + 行動網路") });
+
+    //price
+    headerPrice = $gg("#headerprice");
+    totalPrice = $gg("#totalprice");
+}
+
+function setColorBtn(iPadcolor){
+    let changeColor = iPadData.filter(c => c["color"] == iPadcolor)[0]["picture"];
+    Color.setAttribute("src", `${changeColor}`);
 
     headerPrice.innerText = `NT$18,900 起`;
+    totalPrice.innerText = `NT$18,900 起`;
+    colortitle.innerText= `${iPadcolor}`;
 }
 
 function setStorageBtn(storageType){
     storageValue = storageType ? "64GB" : "256GB";
-
+    
     let changePrice = iPadData.filter(p => p["storage"] == storageValue)[0]["price"];
 
     headerPrice.innerText = `NT$${changePrice} 起`;
     totalPrice.innerText = `NT$${changePrice} 起`;
     storagetitle.innerText= `${storageValue}`;
 
-    //netBtnPrice
+    // //netBtnPrice
     let netBtnPrice = iPadData.filter(p => p["storage"] == storageValue && p["network"] == "Wi-Fi")[0]["price"];
     document.querySelector(".WifiBtnPrice").innerText = `NT$${netBtnPrice}`;
     
-    netBtnPrice = iPadData.filter(p => p["storage"] == storageValue && p["network"] == "Cellular")[0]["price"];
+    netBtnPrice = iPadData.filter(p => p["storage"] == storageValue && p["network"] == "Wi-Fi + 行動網路")[0]["price"];
     document.querySelector(".CelBtnPrice").innerText = `NT$${netBtnPrice}`;
 }
 
 function setNetworkBtn(networkType){
-    networkValue = networkType ? "Wi-Fi" : "Cellular";
     
-    let changePrice = iPadData.filter(p => p["storage"] == storageValue && p["network"] == networkValue)[0]["price"];
+    let changePrice = iPadData.filter(p => p["storage"] == storageValue && p["network"] == networkType)[0]["price"];
 
     headerPrice.innerText = `NT$${changePrice}`;
     totalPrice.innerText = `NT$${changePrice}`;
-    networktitle.innerText= `${networkValue}`;
+    networktitle.innerText= `${networkType}`;
 }
+
+// function Setstyle(){
+//     title.classList.add('accordion-button', 'collapsed');
+//     colortitle.setAttribute('data-bs-toggle','collapse');
+//     colortitle.setAttribute('data-bs-target', 'flush-collapseOne');
+//     colortitle.setAttribute('aria-expanded', 'false');
+//     colortitle.setAttribute('aria-controls', 'flush-collapseOne');
+//     menu.appendChild(colortitle);
+// }
