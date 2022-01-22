@@ -9,7 +9,7 @@ section a{
 .header{
     margin: auto;
     width: 100%;
-    height: 100px;
+    height: 130px;
     position: fixed;
     margin-top: 0;
     top: 0;
@@ -23,22 +23,31 @@ section a{
 .trademark-pic{
     display: flex;
     justify-content: right;
-    padding-top: 30px;
+    padding-top: 40px;
     padding-bottom: 15px;
-    padding-right: 135px;
+    padding-right: 120px;
+}
+.nav{
+    width: 46%;
+    margin: auto;
+    padding-bottom: 30px;
+}
+.nav a:nth-child(2){
+    margin-right: 20px;
+}
+.nav a:nth-child(5){
+    padding-right: 37px;
 }
 .header .list{
     display: flex;
     justify-content: right;
     padding-top: 30px;
-}
-.header .list a{
     font-size: 16px;
     font-weight: 300;
-    margin: 10px;
+    margin: 7px;
     color: #5d6678
 }
-.header .list a:hover{
+.header .list:hover{
     text-decoration: underline;
 }
 .header .subscribebtn{
@@ -58,51 +67,134 @@ section a{
 }
 .header .subscribebtn a:hover{
     background-color: #1fde82;
-    color: ivory;
+    color: white;
+}
+@media screen and (min-width:768px){
+    #menu-control,
+    .hb,
+    .close{
+        display: none;
+    }
 }
 @media screen and (max-width:767px){
     .trademark-pic{
-        width: 400px;
-        height: 100%;
+        width: 80%;
+        margin: 0;
     }
-    .menu {
-        display: flex;
-        flex-direction: column;
+    .header .subscribebtn{
+        display: none;
+    }
+    .nav{
+        margin: 0;
+        position: fixed;
         width: 300px;
-        height: calc(100% - 60px);
-        background-color: #fa0;
-        top: 60px;
+        height: calc(100% - 70px);
+        background-color: white;
+        bottom: 0;
         right: -100%;
         opacity: 0;
         transition: 1s;
+        padding-bottom: 300px;
+        width: 60%;
     }
-    #menu-control:checked~.header .menu{
+    .nav a:nth-child(1){
+        border-bottom:  1px solid;
+    }
+    .nav a:nth-child(2){
+        margin-right: 0;
+    }
+    .nav a:nth-child(5){
+        margin-right: 0;
+    }
+    .nav:first-child::before {
+        content: '';
+        position: absolute;
+        top: 10px;
+        right: 5px;
+        bottom: 0;
+        left: 0;
+        width: 15px;
+        height: 3px;
+        background-color: #5d6678;
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+        margin-left: auto;
+    }
+    .nav:first-child::after {
+        content: '';
+        position: absolute;
+        top: 10px;
+        right: 5px;
+        bottom: 0;
+        left: 0;
+        width: 15px;
+        height: 3px;
+        background-color: #5d6678;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+        margin-left: auto;
+    }
+    .nav:first-child {
+        margin-top: 20px;
+    }
+    #menu-control:checked ~ .header .nav{
         opacity: 1;
         right: 0;
     }
-    .menu a{
-        color: #5d6678;
+    .header .list{
+        display: block;
+    }
+    .close {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        z-index: 2;
+        cursor: pointer;
     }
     .hb{
-        --bar-color: ivory;
+        cursor: pointer;
+        --bar-color: white;
         width: 40px;
         height: 40px;
         background-color: #1fde82;
-        display: flex;
+        /* display: flex; */
+        position: relative;
     }
-    .hb::after{
-        content: '';
-        width: 80%;
+    .hb span{
+        position: absolute;
+        width: 28px;
         height: 4px;
         background-color: var(--bar-color);
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
         margin: auto;
-        box-shadow: 0px 10px 0px var(--bar-color),
-                    0px -10px 0px var(--bar-color);
+    }
+    .hb span:first-child{
+        margin-top: 10px;
+    }
+    .hb span:last-child{
+        margin-bottom: 10px;
+    }
+    #menu-control:checked ~ .header .hb span:first-child{
+        margin-top: auto;
+        transform: rotate(45deg);
+    }
+    #menu-control:checked ~ .header .hb span:nth-child(2){
+        display: none;
+    }
+    #menu-control:checked ~ .header .hb span:last-child{
+        margin-bottom: auto;
+        transform: rotate(-45deg);
     }
     #menu-control{
         position: absolute;
         top: -20px;
     }
+    
 }
 /* section slogan */
 .slogan{
@@ -139,7 +231,7 @@ section a{
     text-align: center;
     background-color: #1fde82;
     border-radius: 4px;
-    color: ivory;
+    color: white;
     text-transform: uppercase;
     transition: 1s;
 }
@@ -172,7 +264,7 @@ section a{
     margin-right: 20px;
     background-color: #1fde82;
     border-radius: 4px;
-    color: ivory;
+    color: white;
     text-transform: uppercase;
     transition: 1s;
 }
@@ -193,7 +285,6 @@ section a{
     .slgpassion-txt{
         padding: 20px;
     }
-
 }
 /* section services */
 .services-txt{
@@ -272,7 +363,7 @@ section a{
     text-align: center;
     background-color: #1fde82;
     border-radius: 4px;
-    color: ivory;
+    color: white;
     text-transform: uppercase;
     transition: 1s;
 }
@@ -290,7 +381,7 @@ section a{
 .contact-txt .subscribebtn:hover{
     border:1px solid #1fde82;
     background-color: #1fde82;
-    color: ivory;
+    color: white;
 }
 .contact-pic{
     padding-left: 100px;
@@ -374,7 +465,7 @@ section a{
 .why .txt .orderbtn:hover{
     border:1px solid #1fde82;
     background-color: #1fde82;
-    color: ivory;
+    color: white;
 }
 @media screen and (max-width:767px){
     .why .txt{
@@ -465,7 +556,7 @@ section a{
     text-align: center;
     background-color: #1fde82;
     border-radius: 4px;
-    color: ivory;
+    color: white;
     text-transform: uppercase;
     transition: 1s;
 }
@@ -508,7 +599,7 @@ section a{
     text-align: center;
     background-color: #1fde82;
     border-radius: 4px;
-    color: ivory;
+    color: white;
     text-transform: uppercase;
     transition: 1s;
 }
@@ -544,7 +635,7 @@ section a{
     text-align: center;
     background-color: #1fde82;
     border-radius: 4px;
-    color: ivory;
+    color: white;
     text-transform: uppercase;
     transition: 1s;
 }
