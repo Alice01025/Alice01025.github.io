@@ -71,8 +71,7 @@ section a{
 }
 @media screen and (min-width:768px){
     #menu-control,
-    .hb,
-    .close{
+    .hb{
         display: none;
     }
 }
@@ -90,12 +89,12 @@ section a{
         width: 300px;
         height: calc(100% - 70px);
         background-color: white;
-        bottom: 0;
         right: -100%;
         opacity: 0;
         transition: 1s;
         padding-bottom: 300px;
         width: 60%;
+        bottom: 0;
     }
     .nav a:nth-child(1){
         border-bottom:  1px solid;
@@ -144,22 +143,12 @@ section a{
     .header .list{
         display: block;
     }
-    .close {
-        width: 20px;
-        height: 20px;
-        position: absolute;
-        top: 5px;
-        right: 5px;
-        z-index: 2;
-        cursor: pointer;
-    }
     .hb{
         cursor: pointer;
         --bar-color: white;
         width: 40px;
         height: 40px;
         background-color: #1fde82;
-        /* display: flex; */
         position: relative;
     }
     .hb span{
