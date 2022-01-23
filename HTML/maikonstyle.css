@@ -611,19 +611,12 @@ section a{
     letter-spacing: 0.84px;
     text-align: center;
 }
-.subscribe .search{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-left: 100px;
-    padding-right: 100px;
-}
 .subscribe .greenbtn{
-    padding: 5px 5px 10px 10px;
+    /* padding: 5px 5px 10px 10px; */
     font-size: 14px;
     text-align: center;
     background-color: #1fde82;
-    border-radius: 4px;
+    /* border-radius: 4px; */
     color: white;
     text-transform: uppercase;
     transition: 1s;
@@ -637,6 +630,10 @@ section a{
         padding: 5px;
     }
     .subscribe .search{
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+    .subscribe .greenbtn{
         padding: 10px;
         margin-bottom: 20px;
     }
