@@ -1,0 +1,17 @@
+.calSign,
+.equal{
+    background-color: #FF9900;
+    color: white;
+}
+.sign,
+.reset{
+    background-color: #c0c0c0f1;
+    color: #000;
+}
+.num{
+    background-color: 	#696969;
+    color: white;
+}
+#inputBox{
+    border: none;
+}

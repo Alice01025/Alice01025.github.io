@@ -1,0 +1,10 @@
+body{
+    background-image: url(/GuessNumber/picture.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+footer{
+    font-size: 12px;
+    color: black;
+    opacity: .7;
+}

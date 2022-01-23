@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="GNstyle.css">
+
+    <title>猜數字</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box mx-auto w-50 p-5">
+            <h1 class="text-center">猜數字</h1>
+            <div class="btn-group mb-3 d-flex justify-content-center" role="group" aria-label="Basic mixed styles example">
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="start">開始</button>
+                <button type="button" class="btn btn-warning" id="giveup">放棄重來</button>
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop1" id="answer">看答案</button>
+            </div>
+            
+            <div class="enterNum input-group mb-3">
+                <span class="input-group-text ">猜答案</span>
+                    <input id="enterNum" type="text" class="form-control" onKeyUp="if(this.value.length>4){this.value=this.value.substr(0,4)};this.value=this.value.replace(/[^\d]/g,'')" onkeyup="this.value=this.value.replace(/\D/g,'')"
+                    onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                <button class="input-group-text btn btn-outline-info" id="Guess">Guess</button>
+            </div>
+            <div class="guessbox">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p class="position-absolute bottom-0 end-0">背景來源: <a href="https://zh.pngtree.com/">pngtree</a></p>
+    </footer>
+    
+    <!-- 開始的Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">遊戲開始</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                請輸入4個不一樣的數字
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- 看答案的Modal -->
+    <div class="modal fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Answer</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <script>
+        let guessbox;
+    </script>
+
+    <script src="/GuessNumber/GNJS.js" type="module"></script>
+    
+</body>
+</html>
