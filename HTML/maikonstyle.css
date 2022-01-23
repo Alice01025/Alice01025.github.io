@@ -689,13 +689,41 @@ footer .icon a{
 footer .Networks h2{
     margin-bottom: 0px;
 }
-footer p{
+.Networks p{
     text-align: left;
     color: #5d6678;
     font-size: 14px;
     font-weight: 300;
     line-height: 1.79em;
     letter-spacing: 0.28px;
+}
+footer .source{
+    margin-top: 100px;
+    color: #5d6678;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1.3em;
+    letter-spacing: 0.22px;
+}
+.source a{
+    text-align: right;
+    font-size: 12px;
+
+}
+.source a:hover{
+    color: #1fde82;
+}
+.source p{
+    padding-left: 0;
+}
+.source .Zemez{
+    color: #1fde82;
+}
+.source .Zemez:hover{
+    color: #5d6678;
+}
+.blockquote-footer::before {
+    content: "";
 }
 @media screen and (max-width:767px){
     footer h2{
@@ -704,5 +732,19 @@ footer p{
     }
     footer .icongroup{
         margin-top: 20px;
+    }
+    .source{
+        padding-left: 0;
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 1.3em;
+        letter-spacing: 0.22px;
+    }
+    .source p{
+        padding-left: 10px;
+        margin-bottom: 20px;
+    }
+    .source a{
+        text-align: left;
     }
 }
