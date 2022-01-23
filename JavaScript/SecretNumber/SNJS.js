@@ -1,7 +1,6 @@
 import {$gg} from "../modules/helpers.js";
 
 const numberBtns = $gg('.num')
-// const gameGuessInput = $gg('input')
 const NumberInput = $gg("#NumberInput");
 
 window.onload = function(){
@@ -23,7 +22,7 @@ document.getElementById("btn_V").disabled = true;
 
 function getNumber(){ 
     document.getElementById("btn_V").disabled = false;
-    answer = Math.floor(Math.random()*(100-1) + 1));
+    answer = Math.floor(Math.random()*(100-1) + 1);
     alert("請輸入0~100間的數字");
     console.log(answer);
 }
