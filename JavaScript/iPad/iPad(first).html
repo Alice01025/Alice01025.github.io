@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="iPadstyle.css">
+
+    <title>iPad</title>
+</head>
+<body> 
+    <header class="row">
+        <div class="header col-12">
+            <div class="col-9">
+                <a href="#">iPad Air</a>
+            </div>
+            <div id="headerprice" class="col-3">
+                <p>NT$18,900起</p>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+            <section class="row main">
+                <div id="picture" class="col-6">
+                    <img id="mainpic" src="/JavaScript/iPad/iPadassets/assets1.jpg" alt="">
+                    <img src="/JavaScript/iPad/iPadassets/assets7.jpg" alt="">
+                </div>
+                <div class="menu col-6">
+                    <h1 class="col-12">購買iPad Air</h1>
+                    <p class="title col-12 accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" id="colortitle">外觀</p>
+                    <div class="color col-12 collapsed show" id="flush-collapseOne">
+                        <button class="col-5" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" onclick='gray()'><img src="/JavaScript/iPad/iPadassets/assets8.png" alt=""><p>太空灰色</p></button>
+                        <button class="col-5" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" onclick='silver()'><img src="/JavaScript/iPad/iPadassets/assets9.png" alt=""><p>銀色</p></button>
+                        <button class="col-5" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" onclick='green()'><img src="/JavaScript/iPad/iPadassets/assets10.jpg" alt=""><p>綠色</p></button>
+                        <button class="col-5" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" onclick='rose()'><img src="/JavaScript/iPad/iPadassets/assets11.jpg" alt=""><p>玫瑰金色</p></button>
+                        <button class="col-5" data-bs-target="#flush-collapseOne" onclick='blue()'><img src="/JavaScript/iPad/iPadassets/assets12.png" alt=""><p>天藍色</p></button>
+                    </div> 
+                    <p class="title col-12 accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseOne" id="storagetitle">儲存裝置</p>
+                    <div class="storage col-12 collapsed show" id="flush-collapseTwo">
+                        <button class="col-5" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" onclick='small()'><span>64<small>GB<sup>1</sup></small></span><br><p>NT$18,900起</p></button>
+                        <button class="col-5" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" onclick='big()'><span>256<small>GB<sup>1</sup></small></span><br><p>NT$23,900起</p></button>
+                    </div> 
+                    <p class="title col-12 accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseOne" id="networktitle">連線能力</p>
+                    <div class="network col-12 collapsed show" id="flush-collapseThree">
+                        <button class="col-5" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" id="Wi-Fi" onclick='wi_fi()'>Wi-Fi<br><p>NT$18,900起</p></button>
+                        <button class="col-5" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" id="Cellular" onclick='cellular()'>Wi-Fi+行動網路<br><p>NT$23,200起</p></button>
+                    </div>
+                </div>
+            </section>
+    </div>
+    
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<script>
+    let price = document.getElementById('price');
+    let colortitle = document.getElementById('colortitle');
+    let storagetitle = document.getElementById('storagetitle');
+    let networktitle = document.getElementById('networktitle');
+    let wifi = document.getElementById('Wi-Fi');
+    let Cellular = document.getElementById('Cellular');
+
+    
+
+    // #region change_img
+    function change_img(count, visual){
+        document.getElementById("mainpic").src=`/JavaScript/iPad/iPadassets/assets${count}.png`;
+        colortitle.innerText=`${visual}`;
+    }
+
+    function gray() {
+        count = 2;
+        visual = "太空灰色";
+        change_img(count, visual);
+    }
+
+    function silver(){
+        count = 3;
+        visual = "銀色";
+        change_img(count, visual);
+    }
+    function green(){
+        count = 4;
+        visual = "綠色";
+        change_img(count, visual);
+    }
+    function rose(){
+        count = 5;
+        visual = "玫瑰金色";
+        change_img(count, visual);
+    }
+    function blue(){
+        count = 6;
+        visual = "天藍色";
+        change_img(count, visual);
+    }
+    //#endregion change_img
+
+    // #region storage
+    function small(){
+        wifi.addEventListener('click', function(){
+            price.innerText='NT$18,900';
+        });
+        Cellular.addEventListener('click', function(){
+            price.innerText='NT$23,900';
+        });
+        storagetitle.innerText="64GB";
+    }
+    function big(){
+        wifi.addEventListener('click', function(){
+            price.innerText='NT$23,200';
+        });
+        Cellular.addEventListener('click', function(){
+            price.innerText='NT$28,200';
+        });
+        price.innerText='NT$23,900起';
+        storagetitle.innerText="256GB";
+    }
+    //#endregion storage
+
+    // #region network
+    function wi_fi(){
+        networktitle.innerText="Wi-Fi";
+    }   
+    function cellular(){
+        networktitle.innerText="Wi-Fi+行動網路";
+    }
+    //#endregion network
+
+</script>
+</body>
+</html>

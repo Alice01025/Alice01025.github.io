@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shizuru&family=Vujahday+Script&display=swap" rel="stylesheet">
+
+    <title>Which one are you?</title>
+    <style>
+        body{
+            background-color: #000;
+            color: white;
+            text-shadow: 0.2em 0.5em 0.1em #600,
+                        -0.3em 0.1em 0.1em #060,
+                        0.4em -0.3em 0.1em #006;
+            font-family: 'Shizuru', cursive;
+            font-family: 'Vujahday Script', cursive;
+        }
+        h2{
+            font-size: 48px;
+            font-weight: bold;
+            text-align: center;
+            color: black;
+            text-shadow:  0 0 0.2em white, 0 0 0.2em white;
+        }
+        [box-id] {
+            visibility: hidden;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            transition:  0.01s;
+        }
+        #msg{ 
+            display: flex;
+            justify-content: center;
+            font-size: 20px;
+            text-align: center;
+            text-shadow: 0 0 0.2em #F7C242, 0 0 0.2em #F7C242;
+        }
+        img{
+            border-image:url('/JavaScript/Harry Potter/Harry Potter assets/assets 26.png');
+            border-radius:50% 50% 50% 50%;
+            width: 75%;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="container mt-5">
+        <!-- 1 row -->
+        <div class="row">
+            <!-- <div class="col-5">
+                
+            </div> -->
+            <div class="col-5 carousel slide" id="carouselExampleControls" data-bs-ride="carousel">
+                <img id="statPic" src="/JavaScript/Harry Potter/Harry Potter assets/assets 25.jpg" alt="">
+                    <div box-id="1"></div>
+                    <div box-id="2"></div>
+                    <div box-id="3"></div>
+                    <div box-id="4"></div>
+                    <div box-id="5"></div>
+                    <div box-id="6"></div>
+                    <div box-id="7"></div>
+                    <div box-id="8"></div>
+                    <div box-id="9"></div>
+                    <div box-id="10"></div>
+                    <div box-id="11"></div>
+                    <div box-id="12"></div>
+                    <div box-id="13"></div>
+                    <div box-id="14"></div>
+                    <div box-id="15"></div>
+                    <div box-id="16"></div>
+                    <div box-id="17"></div>
+                    <div box-id="18"></div>
+                    <div box-id="19"></div>
+                    <div box-id="20"></div>
+            </div>
+            <div class="col-6 me-2">
+                <div class="col-12">
+                    <h2 id="title" class="mb-5"></h2>
+                    <p id="staText" class="text-center fs-1">你是哪個哈利波特角色?</p>
+                </div>
+                <div class="msgbox col-12">
+                    <p id="msg" class="mb-5 mt-5"></p>
+                </div>
+                <div class="col-12 me-2 ps-5">
+                    <button id="statBtn" type="button" class="btn btn-outline-warning w-100 mt-5">開始</button>
+                </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <script>
+        //格子資料
+        // img src="${column}">
+        let brickData = [
+            {
+                id:'1',
+                title:'哈利波特',
+                pic:'/JavaScript/Harry Potter/Harry Potter assets/assets 01.jpg',
+                target: function(){
+                    return '本書主角，是個戴眼鏡的黑髮少年，額頭上有一個閃電形的傷痕。如今已滿十七歲的他終於可以擺脫未成年魔法偵測咒的束縛。但是自從他發現自己和佛地魔的關係是『兩者無法並存於世』之後，就依循著鄧不利多的指引，展開對抗佛地魔的任務，可是卻發現自己成了被通緝的『頭號不受歡迎人物』……'
+                }
+            },
+            {
+                id:'2',
+                title:'阿不思‧鄧不利多',
+                pic:'/JavaScript/Harry Potter/Harry Potter assets/assets 02.jpg',
+                target: function(){
+                    return '前霍格華茲魔法與巫術學校的校長，鳳凰會的創始人，魔法界公認當代最偉大的巫師，戴著半月形的眼鏡，是令人敬仰的長者，卻不幸在第六集中，於學校遭到襲擊而去世。'
+                }
+            },
+            {
+                id:'3',
+                title:'石內卜教授',
+                pic:'/JavaScript/Harry Potter/Harry Potter assets/assets 03.jpg',
+                target: function(){
+                    return '曾是鳳凰會的成員之一。原本在霍格華茲魔法與巫術學校教授魔藥學，後來終於如願以償的成為黑魔法防禦術的老師。他非常厭惡哈利，手臂上有食死人的標記，但不知為了什麼，鄧不利多校長非常信任他。於第七集中遭佛地魔王所殺害。'
+                }
+            }, 
+            {
+                id:'4',
+                title:'天狼星‧布萊克',
+                pic:'/JavaScript/Harry Potter/Harry Potter assets/assets 04.jpg',
+                target: function(){
+                    return '哈利波特的教父。是不為人知的化獸師，可以隨心所欲變成一隻大黑狗。在第五集中，因為遭到食死人的攻擊而跌入魔法部的一座古老拱門，消失在紗幕之後，令哈利傷心不已。'
+                }
+            },
+            {
+                id:'5',
+                title:'金妮',
+                pic:'/JavaScript/Harry Potter/Harry Potter assets/assets 05.jpg',
+                target: function(){
+                    return '榮恩的妹妹，有一頭紅髮，一直暗戀哈利波特，在第六集中曾短暫與哈利交往，後因哈利要尋找分靈體而分手，但大戰後重新在一起並結婚育有子女。'
+                }
+            },
+            {
+                id:'6',
+                title:'榮恩',
+                pic:'/JavaScript/Harry Potter/Harry Potter assets/assets 06.jpg',
+                target: function(){
+                    return '哈利在魔法學校結交的好友，是來自古老魔法家族的么子。'
+                }
+            }, 
+            {
+                id:'7',
+                title:'妙麗',
+                pic:'/JavaScript/Harry Potter/Harry Potter assets/assets 07.jpg',
+                target: function(){
+                    return '出生於麻瓜家庭，是魔法學校裡的高材生，和哈利、榮恩是學校裡的三人組。'
+                }
+            },
+            {
+                id:'8',
+                title:'露娜‧羅古德',
+                pic:'/JavaScript/Harry Potter/Harry Potter assets/assets 08.jpg',
+                target: function(){
+                    return '霍格華茲魔法學校雷文克勞學院的學生，父親贊諾‧羅古德是《謬論家》雜誌的編輯，曾登出哈利波特的專訪。露娜的眉毛很淡、眼珠凸出，明顯的散發出怪里怪氣的氣質，自從加入ＤＡ聚會之後，就將哈利三人組視為朋友。'
+                }
+            },
+            {
+                id:'9',
+                title:'張秋',
+                pic:'/JavaScript/Harry Potter/Harry Potter assets/assets 09.jpg',
+                target: function(){
+                    return '霍格華茲魔法學校七年級的學生，是雷文克勞學院魁地奇球隊的搜捕手，喜歡龍捲風隊，和哈利曾經是一對戀人。'
+                }
+            } ,
+            {
+                id:'10',
+                title:'恩不里居教授',
+                pic:'/JavaScript/Harry Potter/Harry Potter assets/assets 10.jpg',
+                target: function(){
+                    return '霍格華茲魔法學校新任的黑魔法防禦術老師，並兼任霍格華茲總督察，完全聽從魔法部的指揮。有一張大餅臉和像小女孩的尖銳嗓音，身材矮胖。'
+                }
+            },
+            {
+                id:'11',
+                title:'瘋眼穆敵',
+                pic:'/JavaScript/Harry Potter/Harry Potter assets/assets 11.jpg',
+                target: function(){
+                    return '鳳凰會的成員之一，也是魔法世界最有名的退休正氣師。有著一頭如鬃毛般的深灰色長髮，臉和雙手的皮膚上處處是傷疤，一隻眼睛小而漆黑晶亮，另一眼則是鮮藍色的魔眼，於第七集護送哈利時遭食死人襲擊而亡。'
+                }
+            },
+            {
+                id:'12',
+                title:'路平教授',
+                pic:'/JavaScript/Harry Potter/Harry Potter assets/assets 12.jpg',
+                target: function(){
+                    return '雷木思‧路平，鳳凰會的成員之一，是個狼人。有著一頭開始泛白的淺褐色頭髮，不太重視外表，總是穿著一套補釘斑斑的巫師長袍。他在第三集中，擔任霍格華茲的黑魔法防禦術老師時教哈利學會了護法咒。'
+                }
+            }, 
+            {
+                id:'13',
+                title:'催狂魔',
+                pic:'/JavaScript/Harry Potter/Harry Potter assets/assets 13.jpg',
+                target: function(){
+                    return '前任的阿茲卡班監獄獄卒，全身罩著斗篷，會吸走人們的希望、幸福與生存的渴望，而魔法界最恐怖的刑罰『催狂魔之吻』也由牠們負責施行。當佛地魔復活之後就重新和他會合，危害整個世界，並且因為催狂魔的大量繁殖，導致七月盛夏的日子裡，竟瀰漫著一片冰寒的霧氣。'
+                }
+            },
+            {
+                id:'14',
+                title:'海格',
+                pic:'/JavaScript/Harry Potter/Harry Potter assets/assets 14.jpg',
+                target: function(){
+                    return '霍格華茲魔法學校的鑰匙管理員。毛茸茸的大個子，外表粗野，心地卻很柔軟、善良，是魔法學校的奇獸飼育學老師。'
+                }
+            },
+            {
+                id:'15',
+                title:'佛地魔',
+                pic:'/JavaScript/Harry Potter/Harry Potter assets/assets 15.jpg',
+                target: function(){
+                    return '魔法世界裡的大壞蛋。本名湯姆‧瑞斗，從小即發現自己的魔法能力，在進入霍格華茲魔法與巫術學校之前，常常把孤兒院的其他孩子嚇壞了。他的法力高強，想要統治整個魔法世界，並用壞魔法殺害了許多不服從他的巫師，令人聞之色變。'
+                }
+            }, 
+            {
+                id:'16',
+                title:'多比',
+                pic:'/JavaScript/Harry Potter/Harry Potter assets/assets 16.jpg',
+                target: function(){
+                    return '霍格華茲魔法與巫術學校的小精靈。有一雙蝙蝠似的大耳朵，和一對跟網球一樣大、鼓凸凸的綠色眼珠。原本是馬份家的小精靈，因為被哈利波特解救，而過著自由的日子，在學校裡常常找機會幫助哈利波特。'
+                }
+            },
+            {
+                id:'17',
+                title:'跩哥‧馬份',
+                pic:'/JavaScript/Harry Potter/Harry Potter assets/assets 17.jpg',
+                target: function(){
+                    return '跋扈的富家子弟，是哈利在霍格華茲魔法學校裡的死對頭。六年級時遵照佛地魔的指示，進行刺殺鄧不利多的任務，卻在鄧不利多死後，被困在自家的馬份莊園裡面。'
+                }
+            },
+            {
+                id:'18',
+                title:'麥教授',
+                pic:'/JavaScript/Harry Potter/Harry Potter assets/assets 18.jpg',
+                target: function(){
+                    return '霍格華茲魔法與巫術學校的副校長，黑髮女巫。對學生極為嚴厲，專門教授變形的魔法。'
+                }
+            }, 
+            {
+                id:'19',
+                title:'奈威‧隆巴頓',
+                pic:'/JavaScript/Harry Potter/Harry Potter assets/assets 19.jpg',
+                target: function(){
+                    return '古老魔法家族的獨子，由奶奶一手養大。父母親因為遭到食死人的攻擊而發瘋，長期住在聖蒙果魔法疾病與傷害醫院療養。五年級時曾加入哈利所領導的ＤＡ聚會，並在魔法部裡和哈利並肩作戰過。'
+                }
+            },
+            {
+                id:'20',
+                title:'麥朵‧沃倫',
+                pic:'/JavaScript/Harry Potter/Harry Potter assets/assets 20.jpg',
+                target: function(){
+                    return '愛哭鬼麥朵，曾是一個麻瓜出身的女巫，20世紀40年代期間曾在霍格華茲魔法與巫術學院就讀。1943年，她被湯姆·瑞斗使用薩拉札·史萊哲林的蛇妖殺死。'
+                }
+            }
+        ]
+
+
+        let steps = 0 //剩下要走的步數
+        let allSteps = 0 //全部的步數
+        let currentIndex = 0 //目前走到哪一格
+        let speed = 100 //設置速度
+        //DOM
+        let random = 0;
+        let bricks = document.querySelectorAll('[box-id]')
+        let statPic = document.querySelector('#statPic')
+        const statBtn = document.querySelector('#statBtn')
+        const startBtn = document.querySelector('#statBtn')
+        const statText = document.querySelector('#staText')
+        const title = document.querySelector('#title')
+        const msgShow = document.querySelector('#msg')
+        const img = document.querySelectorAll('img')
+
+        //window.onload
+        window.onload = function(){
+
+            // //將資料塞進格子
+            // bricks.forEach(box => {
+            //     let id = box.getAttributeNode('box-id').value;
+            //     let data = brickData.find(x => x.id == id);
+                
+            //     let pic = document.createElement('img');
+            //     pic.setAttribute('src', data.pic);
+            //     box.appendChild(pic);
+            // })
+            
+            //按下Start
+            startBtn.onclick = function(){
+                speed = 100
+                title.innerText = ""
+                msgShow.innerText = ""
+                
+                startBtn.style.visibility = 'hidden'
+
+                random = Math.floor(Math.random() * brickData.length) + 1; //先印出0~31，加1後，前後都加1，改為印出1~32
+                steps = random + (2 * bricks.length); //+ (3 * bricks.length):代表多轉幾圈再停下來
+                allSteps = steps;
+                turnAround()
+            }
+        }
+
+        //function
+        function turnAround(){ 
+            brickData.find((item,index) => {
+                currentIndex = index
+                statPic.src = item[currentIndex].pic
+                currentIndex++
+            })
+            // statPic.src = brickData[currentIndex].pic
+            // console.log(currentIndex)
+            // currentIndex++
+            
+            if(currentIndex >= bricks.length) currentIndex = 0
+            steps--
+
+            if(steps > 0){
+                //還沒走完
+                setTimeout(turnAround, speed)
+
+                //加入變數，當剩餘步數剩1/3時，做減速
+                if(steps < Math.floor((allSteps / 3))) speed += 7
+            }
+            else{
+                //走完了
+                //走到哪一格執行target中的function
+                statPic.src = brickData[random].pic
+                statText.innerText = ""
+                startBtn.style.visibility = 'visible'
+                let titleval = brickData[random].title
+                title.innerText = `${titleval}`
+                let textval = brickData[random].target()
+                msgShow.innerText = `${textval}`;
+            }
+        }
+
+    </script>
+</body>
+</html>
